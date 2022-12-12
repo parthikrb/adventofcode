@@ -2225,19 +2225,19 @@ const sampleInput = `2027
 
 const mostCalories = (sample) => {
   const input = sample.split("\n").map(Number);
-  let highNumber = 0;
+  let highestCalories = 0;
   input.reduce((acc, curr) => {
     if (curr !== 0) {
       acc += +curr;
     } else {
-      if (acc > highNumber) {
-        highNumber = acc;
+      if (acc > highestCalories) {
+        highestCalories = acc;
       }
       acc = 0;
     }
     return acc;
   });
-  return highNumber;
+  return highestCalories;
 };
 
 const output = mostCalories(sampleInput);
